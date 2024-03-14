@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chance Request</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+    background-color: #f2e6ff; /* Light purple background */
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>Can you give me a chance?</h2>
+<button id="yesButton" onclick="showConfirmation()">Yes</button>
+<button id="noButton" onclick="showPlease()">No</button>
+
+<script>
+let pleaseTexts = [
+  "mno pleeaase just think about it😓",
+  "think about it🙄",
+  "for the big 2-2😫",
+  "ill build you a froggy planet😔",
+  "are you sure NO😣",
+  "ill build you a froggy planet😔",
+  "are you sure NO😣",
+  "if not the relationship consider the call",
+  "'just the call d.pickels'",
+  "take your time before answering hun🙄🙄",
+  "not asking for something more than a call",
+  "im asking to get back together so a call to catch up and hear me👫👭",
+  "يلا يا دكتورة جروح الغرام 👨‍🍼",
+  "DO you think i have forgotten about you! NEVERRRR",
+  "i got faith in U&I🙄👫👭",
+  "so put your little hand in mine 👯‍♀️🪢👯",
+  "if you'd be the cash i'd be the rubber band 💵💸with wings too",
+  "ليتني لما عرفتك ما تركتك",
+  "come on supermno 🪡 call me?",
+  "growing together can be peaceful hun"
+];
+let index = 0;
+
+function showConfirmation() {
+  document.getElementById("yesButton").style.display = "none";
+  document.getElementById("noButton").style.display = "none";
+  document.body.innerHTML += "<h3 style='color: purple;'>Yaaaaaay! Call me asap tysm mno<3</h3>";
+}
+
+function showPlease() {
+  let pleaseButton = document.getElementById("pleaseButton");
+  if (!pleaseButton) {
+    pleaseButton = document.createElement("button");
+    pleaseButton.innerText = "Please";
+    pleaseButton.id = "pleaseButton";
+    pleaseButton.style.fontSize = "16px";
+    document.body.insertBefore(pleaseButton, document.getElementById("noButton"));
+  } else {
+    let indexToShow = index % pleaseTexts.length;
+    pleaseButton.innerText = pleaseTexts[indexToShow];
+    index++;
+    pleaseButton.style.fontSize = parseInt(window.getComputedStyle(pleaseButton).fontSize) + 2 + "px";
+  }
+}
+</script>
+
+</body>
+</html>
